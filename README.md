@@ -1,5 +1,7 @@
 # CoAct
 
+📄 **Paper:** [CoAct (ACM Digital Library)](https://dl.acm.org/doi/10.1145/3770855.3817872) · [PDF](https://dl.acm.org/doi/pdf/10.1145/3770855.3817872)
+
 CoAct answers complex, multi-hop questions with a **central planner** that coordinates a
 pool of **parallel tool-calling sub-agents**.
 
