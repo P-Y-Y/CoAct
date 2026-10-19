@@ -36,7 +36,7 @@ coact/
 │   ├── parse_log.py       # run log -> per-query cost statistics
 │   ├── judge.py           # LLM-as-judge accuracy + cost averages
 │   └── plan_similarity.py # motivation study: dependency vs. embedding similarity
-└── framework/         # tool-calling agent framework (adapted from Flash-Searcher)
+└── framework/         # tool-calling agent framework
 baselines/             # ReAct, Flash-Searcher and Skeleton-of-Thought baselines
 scripts/run_benchmark.sh
 tests/
@@ -114,9 +114,3 @@ pip install -e ".[dev]"
 pytest
 ruff check . && ruff format --check .
 ```
-
-## Acknowledgements
-
-`coact/framework` is adapted from [Flash-Searcher](https://github.com/OPPO-PersonalAI/Flash-Searcher),
-which builds on HuggingFace [smolagents](https://github.com/huggingface/smolagents). Both are
-licensed under Apache-2.0.
