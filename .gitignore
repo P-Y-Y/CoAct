@@ -1,0 +1,32 @@
+# Secrets
+.env
+*.env
+!.env.example
+
+# Datasets and experiment outputs
+data/
+/dataset/
+logs/
+log/
+results/
+stats/
+judge_results/
+downloads/
+*.log
+!tests/fixtures/*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.ruff_cache/
+.pytest_cache/
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store

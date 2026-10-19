@@ -1,0 +1,30 @@
+2026-01-01 10:00:00,000 - INFO - [task 1] Start task 1: Who wrote X?
+2026-01-01 10:00:00,100 - INFO - [task 2] Start task 2: What is Y?
+2026-01-01 10:00:01,000 - INFO - [task 1] llm call start
+2026-01-01 10:00:02,000 - INFO - [task 1] [task 1] [LLM] model=qwen input_tokens=100 output_tokens=20 total_tokens=120 duration_sec=1.500
+2026-01-01 10:00:02,001 - INFO - [task 1] llm call end,result:{
+"completed": false,
+"final_answer": "",
+"actions": [{"action_id": "A1"}]
+}
+2026-01-01 10:00:02,500 - INFO - [task 1] center to sub communication size:300 bytes
+2026-01-01 10:00:03,000 - INFO - [task 1] step++
+2026-01-01 10:00:03,100 - INFO - [task 1] [Serper credits]: 1
+2026-01-01 10:00:03,200 - INFO - [task 1] [Jina Usage] tokens = 555
+2026-01-01 10:00:03,300 - INFO - [task 2] [TextInspector Usage] total_tokens=30 input_tokens=20 output_tokens=10
+2026-01-01 10:00:03,400 - INFO - [task 2] [Tool:visual_inspector] input_tokens=5 output_tokens=6 total_tokens=11
+2026-01-01 10:00:03,500 - INFO - [task 2] [Tool:visual_inspector] duration=2.5s, tokens=11
+2026-01-01 10:00:03,600 - INFO - [task 2] [Whisper Usage] duration=1.25s estimated_transcript_tokens=40
+2026-01-01 10:00:03,700 - INFO - [task 2] [Tool:audio_inspector] duration=3.0s, tokens=70
+2026-01-01 10:00:03,800 - INFO - [task 2] [Tool:audio_inspector] transcription only, duration=0.5s
+2026-01-01 10:00:04,000 - INFO - [task 1] step++
+2026-01-01 10:00:04,500 - INFO - [task 1] sub to center communication size:900 bytes
+2026-01-01 10:00:05,000 - INFO - [task 1] [LLM] model=qwen input_tokens=200 output_tokens=30 total_tokens=230 duration_sec=2.000
+2026-01-01 10:00:05,001 - INFO - [task 1] llm call end,result:{
+"completed": true,
+"final_answer": "Alice",
+"actions": []
+}
+2026-01-01 10:00:06,000 - INFO - [task 1] End task 1 | Answer: Alice B.
+2026-01-01 10:00:07,000 - INFO - [task 2] failed, skipped [Max rounds reached]
+2026-01-01 10:00:07,001 - INFO - [task 2] End task 2 | Answer: 42

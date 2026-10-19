@@ -1,0 +1,12 @@
+# Datasets (downloaded / converted locally; see README.md)
+data/
+# Run artifacts
+results/
+logs/
+outputs/
+*.log
+# Secrets
+.env
+# Python
+__pycache__/
+*.py[cod]

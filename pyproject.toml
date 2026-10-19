@@ -1,0 +1,68 @@
+[project]
+name = "coact"
+version = "0.1.0"
+description = "CoAct: a central planner coordinating parallel tool-calling sub-agents for deep search."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "openai>=1.40",
+    "numpy",
+    "python-dotenv",
+    "pyyaml",
+    "requests",
+    "tqdm",
+    "rich",
+    "jinja2",
+    "pillow",
+    "json-repair",
+]
+
+[project.optional-dependencies]
+vllm = ["vllm", "transformers"]
+dev = ["pytest", "ruff"]
+multimodal = [
+    "beautifulsoup4",
+    "biopython",
+    "faster-whisper",
+    "mammoth",
+    "markdownify",
+    "openpyxl",
+    "pandas",
+    "pdfminer.six",
+    "puremagic",
+    "pydub",
+    "python-pptx",
+    "SpeechRecognition",
+    "xlrd",
+    "youtube-transcript-api",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["coact*"]
+
+[tool.setuptools.package-data]
+"coact.framework" = ["prompts/**/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = ["baselines"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["coact"]
+
+[tool.ruff.lint.per-file-ignores]
+# Kept verbatim from upstream smolagents / Flash-Searcher.
+"coact/framework/mm_tools_utils.py" = ["B904", "SIM"]
+"coact/framework/_function_type_hints_utils.py" = ["B904", "SIM"]
